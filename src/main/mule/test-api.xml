@@ -9,6 +9,9 @@ http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/htt
 	</http:listener-config>
 	<flow name="test-apiFlow" doc:id="94310f0e-ec8f-4c30-b91c-fe0c3f1ea1e4" >
 		<http:listener doc:name="Listener" doc:id="cbf1dc81-982e-4fd5-9692-f992b35a81e4" config-ref="HTTP_Listener_config" path="/test"/>
-		<set-payload value="#['Hello Salumiah!!']" doc:name="Set Payload" doc:id="63b495d3-7fe7-4908-bfcc-b17418200211" />
+		<flow-ref doc:name="Flow Reference" doc:id="de8a2450-4578-41f7-97e1-c2719753f62b" name="test-apiSub_Flow"/>
 	</flow>
+	<sub-flow name="test-apiSub_Flow" doc:id="4cef263e-d4d9-4c54-80a3-35326a2968d4" >
+		<set-payload value="#['Hello Salumiah!!']" doc:name="Set Payload" doc:id="63b495d3-7fe7-4908-bfcc-b17418200211" />
+	</sub-flow>
 </mule>
