@@ -1,7 +1,7 @@
 pipeline {
   agent any
   tools {
-        maven 'Maven_3.5.4' 
+        maven 'maven_3_5_4' 
     }
 	
   /*parameters {
@@ -18,7 +18,7 @@ pipeline {
 		}
 		stage('Compile Stage') {
 		  steps {
-			withMaven(maven : 'maven_3.5.4'){
+			withMaven(maven : 'maven_3_5_4'){
 			  echo 'Compile Stage'
 			  sh 'mvn clean compile'
 			}
@@ -26,7 +26,7 @@ pipeline {
 		}
 		stage('Testing Stage') {
 		  steps {
-			withMaven(maven : 'maven_3.5.4'){
+			withMaven(maven : 'maven_3_5_4'){
 			  echo 'Testing Stage'
 			  sh 'mvn test'
 			}
@@ -34,7 +34,7 @@ pipeline {
 		}
 		stage('Deploy Stage') {
 		  steps {
-			withMaven(maven : 'maven_3.5.4'){
+			withMaven(maven : 'maven_3_5_4'){
 			  echo 'Testing Stage'
 			  sh 'mvn deploy'
 			}
