@@ -15,7 +15,11 @@
 
 		<app.runtime>4.2.0</app.runtime>
 		<mule.maven.plugin.version>3.2.7</mule.maven.plugin.version>
-	<munit.version>2.1.5</munit.version>
+		<munit.version>2.1.5</munit.version>
+		
+		<anypoint.username>salumiah_test1</anypoint.username>
+        <anypoint.password>Shalu@9849</anypoint.password>
+        
     </properties>
 
 	<build>
@@ -26,8 +30,22 @@
 				<version>${mule.maven.plugin.version}</version>
 				<extensions>true</extensions>
 				<configuration>
-				</configuration>
-			</plugin>
+					<cloudHubDeployment>
+			            <uri>https://anypoint.mulesoft.com</uri>
+			            <username>${anypoint.username}</username>
+			            <password>${anypoint.password}</password>
+			            <environment>Sandbox</environment>
+			            
+			            <businessGroup>self</businessGroup>
+			            <muleVersion>4.2.0</muleVersion>
+			            <applicationName>test-api-m4</applicationName>
+			            <properties>
+			                <key>value</key>
+			            </properties>
+			           
+			        </cloudHubDeployment>	
+			    </configuration>	
+        </plugin>
 		<plugin>
                 <groupId>com.mulesoft.munit.tools</groupId>
                 <artifactId>munit-maven-plugin</artifactId>
